@@ -1,0 +1,18 @@
+le resolver appel la méthode définie dans le service...
+on a l'ordre:
+    -entity/et ou model
+    -service (la logique de la requête)
+    -resolver (la requête)
+
+le decorateur @Entity(typeorm) au niveau du model/et ou entity permet de spécifier qu'il s'agit d'une classe en bd
+des décorateurs tels que @Colomn ou @PrimaryGeneratedColumn sont aussi des éléments de typeorm
+
+après avoir transformer l'entity en model, l'ajouter au niveau du module pour qu'il soit connu par la bd
+imports: [TypeOrmModule.forFeature([ "Model_name" ])]
+
+puis modifier le constructeur du service
+
+le decorateur @InputType() sert au niveau des dto (ex: model_name-create.dto.ts)
+
+--------------------------------------------------------------------------------
+Procédure d'authentification:
